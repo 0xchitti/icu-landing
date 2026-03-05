@@ -9,32 +9,6 @@
         .rotating-word {
             display: inline-block;
             position: relative;
-            color: var(--text-main);
-        }
-        .rotating-word .word {
-            display: inline-block;
-            opacity: 0;
-            position: absolute;
-            left: 0;
-            top: 0;
-            white-space: nowrap;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            transform: translateY(12px);
-        }
-        .rotating-word .word.active {
-            opacity: 1;
-            position: relative;
-            transform: translateY(0);
-        }
-        .rotating-word .word.exit {
-            opacity: 0;
-            position: absolute;
-            transform: translateY(-12px);
-        }
-        .rotating-word {
-            display: inline-block;
-            position: relative;
-            color: var(--text-main);
         }
         .rotating-word .word {
             display: inline-block;
@@ -86,7 +60,6 @@
             position: relative;
         }
 
-        
         body::before {
             content: "";
             position: fixed;
@@ -100,7 +73,6 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -109,7 +81,6 @@
             z-index: 1;
         }
 
-        
         header {
             min-height: 90vh;
             display: flex;
@@ -201,7 +172,6 @@
             transform: translateY(-2px);
         }
 
-        
         .section-header {
             display: flex;
             justify-content: space-between;
@@ -324,7 +294,6 @@
             color: var(--bg-color);
         }
 
-        
         .card.empty-state {
             background: transparent;
             border: 1px dashed #333;
@@ -347,7 +316,6 @@
             font-size: 1.25rem;
         }
 
-        
         footer {
             border-top: 1px solid var(--border-color);
             padding: 3rem 0;
@@ -358,6 +326,97 @@
             color: #555;
         }
 
+        .footer-social {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            color: #555;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-social a:hover {
+            color: var(--text-main);
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Agent badge */
+        .agent-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border: 1px solid #222;
+            border-radius: 100px;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            font-size: 0.8rem;
+            color: #666;
+            transition: all 0.4s ease;
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .agent-badge::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 100px;
+            padding: 1px;
+            background: linear-gradient(135deg, #BCFF00, #FF3500, #002AF0, #FF9FC2);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .agent-badge:hover::before {
+            opacity: 1;
+        }
+
+        .agent-badge:hover {
+            color: #aaa;
+            border-color: transparent;
+        }
+
+        .agent-badge .bot-icon {
+            width: 16px;
+            height: 16px;
+            background: #BCFF00;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            line-height: 1;
+            color: #000;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .agent-badge .pulse {
+            width: 6px;
+            height: 6px;
+            background: #BCFF00;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
         .footer-logo {
             font-family: var(--font-serif);
             font-style: italic;
@@ -365,18 +424,6 @@
             color: var(--text-main);
         }
 
-        .footer-links a {
-            color: #555;
-            text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-main);
-        }
-
-        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -387,7 +434,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        
         .lock-icon {
             width: 14px;
             height: 14px;
@@ -403,35 +449,25 @@
             h1 { font-size: 4rem; }
             .grid { grid-template-columns: 1fr; }
             .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-            footer { flex-direction: column; gap: 2rem; align-items: flex-start; }
-            .footer-links a { margin-left: 0; margin-right: 2rem; }
+            footer { flex-direction: column; gap: 2rem; align-items: center; text-align: center; }
         }
-            </style>
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const words = document.querySelectorAll('#rotatingWord .word');
+            const colors = ['#BCFF00', '#FF3500', '#002AF0', '#FF9FC2'];
             let current = 0;
+            
+            // Set initial color
+            words[0].style.color = colors[Math.floor(Math.random() * colors.length)];
+            
             setInterval(function() {
                 words[current].classList.remove('active');
                 words[current].classList.add('exit');
                 const prev = current;
                 current = (current + 1) % words.length;
-                words[current].classList.add('active');
-                setTimeout(function() {
-                    words[prev].classList.remove('exit');
-                }, 500);
-            }, 2000);
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const words = document.querySelectorAll('#rotatingWord .word');
-            let current = 0;
-            setInterval(function() {
-                words[current].classList.remove('active');
-                words[current].classList.add('exit');
-                const prev = current;
-                current = (current + 1) % words.length;
+                // Random color for each word
+                words[current].style.color = colors[Math.floor(Math.random() * colors.length)];
                 words[current].classList.add('active');
                 setTimeout(function() {
                     words[prev].classList.remove('exit');
@@ -445,46 +481,27 @@
     <div class="container">
         
         <header>
-            <div class="crest-wrapper">
-                
-                <svg class="crest" viewBox="0 0 100 100">
-                    <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z"></path>
-                    <circle cx="50" cy="50" r="20" stroke-width="1.5"></circle>
-                    <path d="M50 30 L50 70 M30 50 L70 50" stroke-width="1.5"></path>
-                </svg>
-            </div>
-            
             <h1>Cracked <span class="rotating-word" id="rotatingWord"><span class="word active">builders</span><span class="word">creators</span><span class="word">designers</span><span class="word">founders</span><span class="word">hackers</span></span><br>learn from<br>cracked people.</h1>
             
             <p class="tagline">Learn from top contributors of Inner Circle.</p>
             
             <div class="subtext">
-                <svg class="lock-icon" viewBox="0 0 24 24">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-                Invite Only
-                <span>•</span>
                 Hands-on Workshops
                 <span>•</span>
-                Bangalore
+                Virtual
             </div>
-            
-            
         </header>
 
-        
         <section id="workshops">
             <div class="section-header">
                 <h2 class="section-title">Upcoming Sessions</h2>
-                <div style="font-family: var(--font-sans); color: #666; font-size: 0.9rem;">2024 Semester</div>
+                <div style="font-family: var(--font-sans); color: #666; font-size: 0.9rem;">2026 Semester</div>
             </div>
 
             <div class="grid">
-                
                 <article class="card">
                     <div class="card-image-container">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&amp;w=2670&amp;auto=format&amp;fit=crop" alt="System Design Workshop">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop" alt="System Design Workshop">
                     </div>
                     <div class="card-content">
                         <div class="card-meta">
@@ -499,10 +516,9 @@
                     </div>
                 </article>
 
-                
                 <article class="card">
                     <div class="card-image-container">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&amp;w=2564&amp;auto=format&amp;fit=crop" alt="Growth Engineering">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" alt="Growth Engineering">
                     </div>
                     <div class="card-content">
                         <div class="card-meta">
@@ -517,10 +533,9 @@
                     </div>
                 </article>
 
-                
                 <article class="card">
                     <div class="card-image-container">
-                        <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?q=80&amp;w=2670&amp;auto=format&amp;fit=crop" alt="Founder Psychology">
+                        <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?q=80&w=2670&auto=format&fit=crop" alt="Founder Psychology">
                     </div>
                     <div class="card-content">
                         <div class="card-meta">
@@ -535,7 +550,6 @@
                     </div>
                 </article>
 
-                
                 <div class="card empty-state">
                     <div class="empty-content">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity: 0.5;">
@@ -548,17 +562,24 @@
             </div>
         </section>
 
-        
         <footer>
-            <div class="footer-logo">Inner Circle</div>
-            <div class="footer-links">
-                <a href="#">Manifesto</a>
-                <a href="#">Apply to Teach</a>
-                <a href="#">Twitter</a>
+            <div class="footer-social">
+                <!-- Twitter/X -->
+                <a href="https://x.com/innercircle_so" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://instagram.com/innercircle" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
             </div>
-            <div>Bangalore, India</div>
+
+            <div class="agent-badge">
+                <span class="bot-icon">⚡</span>
+                <span>built by agent chitti</span>
+                <span class="pulse"></span>
+            </div>
         </footer>
     </div>
-
 
 </body></html>
