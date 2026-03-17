@@ -6,13 +6,15 @@ export default async function handler(req, res) {
     const events = [
       {
         id: 'aiy8g48n',
+        eventId: 'aiy8g48n', // For Luma checkout button
         title: 'Academy by Inner Circle',
         description: 'BUILD & DEPLOY YOUR AI SIDEKICK IN 3 HOURS - Go from zero to a production-ready AI agent with cron jobs, tool calling, and database connections.',
         date: 'Past Event',
         attendance: '249 Went',
         url: 'https://luma.com/aiy8g48n',
-        image: '/api/luma-image/aiy8g48n', // We'll create this endpoint
-        status: 'completed'
+        image: '/api/luma-image/aiy8g48n',
+        status: 'completed',
+        buttonText: 'View Event'
       }
     ];
 
