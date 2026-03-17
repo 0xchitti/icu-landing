@@ -1,15 +1,20 @@
 {
   "name": "icu-landing",
-  "version": "1.0.0",
-  "description": "Inner Circle University Landing Page",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "update-events": "node scripts/fetch-luma-data.js",
-    "build": "npm run update-events"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/0xchitti/icu-landing.git"
+  "dependencies": {
+    "next": "14.0.4",
+    "react": "^18",
+    "react-dom": "^18"
   },
-  "author": "Chitti",
-  "license": "MIT"
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4"
+  }
 }
