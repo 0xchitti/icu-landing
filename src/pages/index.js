@@ -149,18 +149,11 @@ export default function Home() {
               </article>
             )}
 
-            {/* Coming Soon Cards */}
+            {/* Coming Soon Card */}
             <article className="card empty-state">
               <div className="empty-content">
                 <div>🔥</div>
                 <span>More sessions coming soon</span>
-              </div>
-            </article>
-
-            <article className="card empty-state">
-              <div className="empty-content">
-                <div>⚡</div>
-                <span>Join the waitlist</span>
               </div>
             </article>
           </div>
