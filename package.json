@@ -1,0 +1,15 @@
+{
+  "name": "icu-landing",
+  "version": "1.0.0",
+  "description": "Inner Circle University Landing Page",
+  "scripts": {
+    "update-events": "node scripts/fetch-luma-data.js",
+    "build": "npm run update-events"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0xchitti/icu-landing.git"
+  },
+  "author": "Chitti",
+  "license": "MIT"
+}
