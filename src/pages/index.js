@@ -335,7 +335,7 @@ export default function Home() {
 
         .card-image-container {
           width: 100%;
-          height: 320px;
+          height: 380px;
           overflow: hidden;
           position: relative;
           background: #1a1a1a;
@@ -358,7 +358,7 @@ export default function Home() {
         }
 
         .card-content {
-          padding: 1.5rem;
+          padding: 1rem 1.5rem 1.5rem;
           display: flex;
           flex-direction: column;
           flex-grow: 1;
@@ -371,24 +371,24 @@ export default function Home() {
           text-transform: uppercase;
           letter-spacing: 0.05em;
           color: #666;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
           border-bottom: 1px solid #222;
-          padding-bottom: 0.75rem;
+          padding-bottom: 0.5rem;
         }
 
         .card-title {
           font-family: var(--font-serif);
-          font-size: 1.5rem;
-          margin-bottom: 0.75rem;
+          font-size: 1.4rem;
+          margin-bottom: 0.5rem;
           font-weight: 400;
           line-height: 1.2;
         }
 
         .card-desc {
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           color: #888;
-          line-height: 1.5;
-          margin-bottom: 1.5rem;
+          line-height: 1.4;
+          margin-bottom: 1rem;
           flex-grow: 1;
         }
 
