@@ -11,10 +11,6 @@ export default function EventCard({ event }) {
     if (!document.getElementById('luma-checkout')) {
       document.head.appendChild(script);
     }
-    
-    return () => {
-      // Cleanup if needed
-    };
   }, []);
 
   return (
@@ -28,7 +24,7 @@ export default function EventCard({ event }) {
           <span>{event.attendance}</span>
         </div>
         <h3 className="card-title">{event.title}</h3>
-        <div className="card-desc">{event.description}</div>
+        <p className="card-desc">{event.description}</p>
         <div className="card-footer">
           <a 
             href={event.url}

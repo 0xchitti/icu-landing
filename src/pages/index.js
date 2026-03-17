@@ -3,26 +3,28 @@ import Head from 'next/head';
 import EventCard from '../components/EventCard';
 
 export default function Home() {
-  const [events, setEvents] = useState([]);
+  const [lumaEvent, setLumaEvent] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchEvents() {
+    async function fetchLumaEvent() {
       try {
         const response = await fetch('/api/events');
         const data = await response.json();
-        setEvents(data.events || []);
+        if (data.events && data.events.length > 0) {
+          setLumaEvent(data.events[0]);
+        }
       } catch (error) {
-        console.error('Failed to fetch events:', error);
+        console.error('Failed to fetch Luma event:', error);
       } finally {
         setLoading(false);
       }
     }
     
-    fetchEvents();
+    fetchLumaEvent();
     
     // Refresh every 5 minutes
-    const interval = setInterval(fetchEvents, 5 * 60 * 1000);
+    const interval = setInterval(fetchLumaEvent, 5 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -98,40 +100,100 @@ export default function Home() {
           </div>
 
           <div className="grid">
+            {/* Dynamic Luma Event */}
             {loading ? (
-              <div className="card empty-state">
-                <div className="empty-content">
-                  <div>⏳</div>
-                  <span>Loading sessions...</span>
+              <article className="card">
+                <div className="card-image-container">
+                  <img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?q=80&w=2670&auto=format&fit=crop" alt="Loading..." />
                 </div>
-              </div>
-            ) : events.length > 0 ? (
-              events.map(event => (
-                <EventCard key={event.id} event={event} />
-              ))
+                <div className="card-content">
+                  <div className="card-meta">
+                    <span>Loading...</span>
+                    <span>Loading...</span>
+                  </div>
+                  <h3 className="card-title">Loading Event...</h3>
+                  <p className="card-desc">Fetching latest event details...</p>
+                  <div className="card-footer">
+                    <a href="#" className="register-btn">Loading...</a>
+                  </div>
+                </div>
+              </article>
+            ) : lumaEvent ? (
+              <EventCard event={lumaEvent} />
             ) : (
-              <div className="card empty-state">
-                <div className="empty-content">
-                  <div>📚</div>
-                  <span>No sessions scheduled yet</span>
+              <article className="card">
+                <div className="card-image-container">
+                  <img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?q=80&w=2670&auto=format&fit=crop" alt="Academy by Inner Circle" />
                 </div>
-              </div>
+                <div className="card-content">
+                  <div className="card-meta">
+                    <span>Past Event</span>
+                    <span>249 Went</span>
+                  </div>
+                  <h3 className="card-title">Academy by Inner Circle</h3>
+                  <p className="card-desc">BUILD & DEPLOY YOUR AI SIDEKICK IN 3 HOURS</p>
+                  <div className="card-footer">
+                    <a href="https://luma.com/aiy8g48n" className="register-btn">View Event</a>
+                  </div>
+                </div>
+              </article>
             )}
 
-            {/* Placeholder cards to maintain grid */}
-            <div className="card empty-state">
-              <div className="empty-content">
-                <div>🚀</div>
-                <span>More sessions coming soon</span>
+            {/* Static Events */}
+            <article className="card">
+              <div className="card-image-container">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" alt="Growth Engineering" />
               </div>
-            </div>
+              <div className="card-content">
+                <div className="card-meta">
+                  <span>Oct 24 • 2:00 PM</span>
+                  <span>Koramangala</span>
+                </div>
+                <h3 className="card-title">The Physics of Viral Growth</h3>
+                <p className="card-desc">Mathematical modeling of referral loops and retention cohorts. No marketing fluff, just data pipelines.</p>
+                <div className="card-footer">
+                  <a href="#" className="register-btn">Register Interest</a>
+                </div>
+              </div>
+            </article>
 
-            <div className="card empty-state">
+            <article className="card">
+              <div className="card-image-container">
+                <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?q=80&w=2670&auto=format&fit=crop" alt="Founder Psychology" />
+              </div>
+              <div className="card-content">
+                <div className="card-meta">
+                  <span>Nov 05 • 6:00 PM</span>
+                  <span>Whitefield</span>
+                </div>
+                <h3 className="card-title">Founder Psychology & Resilience</h3>
+                <p className="card-desc">Navigating the trough of sorrow. An intimate roundtable with serial entrepreneurs who exited.</p>
+                <div className="card-footer">
+                  <a href="#" className="register-btn">Register Interest</a>
+                </div>
+              </div>
+            </article>
+
+            <article className="card empty-state">
+              <div className="empty-content">
+                <div>📚</div>
+                <span>More sessions in planning</span>
+              </div>
+            </article>
+
+            <article className="card empty-state">
               <div className="empty-content">
                 <div>⚡</div>
-                <span>Stay tuned for updates</span>
+                <span>Join the waitlist</span>
               </div>
-            </div>
+            </article>
+
+            <article className="card empty-state">
+              <div className="empty-content">
+                <div>🚀</div>
+                <span>Applications open soon</span>
+              </div>
+            </article>
           </div>
         </section>
 
