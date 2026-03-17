@@ -30,7 +30,7 @@ export default function Home() {
 
   useEffect(() => {
     // Rotating words animation
-    const words = ['builders', 'hackers', 'founders', 'creators'];
+    const words = ['builders', 'creators', 'designers', 'founders', 'hackers'];
     let currentIndex = 0;
     
     function rotateWords() {
@@ -48,7 +48,7 @@ export default function Home() {
     }
     
     rotateWords(); // Initial call
-    const interval = setInterval(rotateWords, 3000);
+    const interval = setInterval(rotateWords, 2000);
     
     return () => clearInterval(interval);
   }, []);
@@ -57,7 +57,7 @@ export default function Home() {
     <>
       <Head>
         <title>Inner Circle University</title>
-        <meta name="description" content="India's most exclusive AI builders community" />
+        <meta name="description" content="Cracked builders learn from cracked people." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -67,26 +67,28 @@ export default function Home() {
 
       <div className="container">
         <header>
-          <div className="crest-wrapper">
-            <svg className="crest" viewBox="0 0 24 24">
-              <path d="M12 2L3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5" />
-            </svg>
-          </div>
-          <h1>Inner Circle University</h1>
-          <div className="tagline">
-            India's most exclusive AI{' '}
+          <h1>
+            Cracked{' '}
             <span className="rotating-word">
               <span className="word active" data-word="builders">builders</span>
-              <span className="word" data-word="hackers">hackers</span>
-              <span className="word" data-word="founders">founders</span>
               <span className="word" data-word="creators">creators</span>
-            </span>{' '}
-            community
+              <span className="word" data-word="designers">designers</span>
+              <span className="word" data-word="founders">founders</span>
+              <span className="word" data-word="hackers">hackers</span>
+            </span>
+            <br />
+            learn from
+            <br />
+            cracked people.
+          </h1>
+          
+          <p className="tagline">Learn from top contributors of Inner Circle.</p>
+          
+          <div className="subtext">
+            Hands-on Workshops
+            <span>•</span>
+            Virtual
           </div>
-          <div className="subtext">Invite only</div>
-          <a href="#events" className="cta-button">
-            View Sessions
-          </a>
         </header>
 
         <section id="events">
@@ -142,6 +144,23 @@ export default function Home() {
             {/* Static Events */}
             <article className="card">
               <div className="card-image-container">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop" alt="System Design Workshop" />
+              </div>
+              <div className="card-content">
+                <div className="card-meta">
+                  <span>Oct 12 • 10:00 AM</span>
+                  <span>Indiranagar</span>
+                </div>
+                <h3 className="card-title">Distributed Systems at Scale</h3>
+                <p className="card-desc">A deep dive into eventual consistency, sharding strategies, and failure modes with the CTO of Nexus.</p>
+                <div className="card-footer">
+                  <a href="#" className="register-btn">Register Interest</a>
+                </div>
+              </div>
+            </article>
+
+            <article className="card">
+              <div className="card-image-container">
                 <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" alt="Growth Engineering" />
               </div>
               <div className="card-content">
@@ -187,29 +206,14 @@ export default function Home() {
                 <span>Join the waitlist</span>
               </div>
             </article>
-
-            <article className="card empty-state">
-              <div className="empty-content">
-                <div>🚀</div>
-                <span>Applications open soon</span>
-              </div>
-            </article>
           </div>
         </section>
 
         <footer>
-          <div>
-            <div className="agent-badge">
-              <div className="bot-icon"></div>
-              <span>Website maintained by AI agents</span>
-            </div>
-          </div>
-          <div className="footer-social">
-            <a href="https://instagram.com/innercircle" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.33 0 8.741 0 12.001c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12.001 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12.001 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-              </svg>
-            </a>
+          <div className="footer-logo">Inner Circle</div>
+          <div className="agent-badge">
+            <div className="bot-icon">🤖</div>
+            <span>Website maintained by AI agents</span>
           </div>
         </footer>
       </div>
@@ -234,11 +238,22 @@ export default function Home() {
           position: relative;
           transform: translateY(0);
         }
-        .rotating-word .word.exit {
-          opacity: 0;
-          position: absolute;
-          transform: translateY(-12px);
+        .rotating-word .word:nth-child(1).active {
+          color: #BCFF00;
         }
+        .rotating-word .word:nth-child(2).active {
+          color: #FF3500;
+        }
+        .rotating-word .word:nth-child(3).active {
+          color: #002AF0;
+        }
+        .rotating-word .word:nth-child(4).active {
+          color: #FF9FC2;
+        }
+        .rotating-word .word:nth-child(5).active {
+          color: #00D4FF;
+        }
+
         :root {
           --bg-color: #0A0A0A;
           --card-bg: #141414;
@@ -260,123 +275,58 @@ export default function Home() {
         }
 
         body {
-          background-color: var(--bg-color);
-          color: var(--text-main);
           font-family: var(--font-sans);
+          background: var(--bg-color);
+          color: var(--text-main);
+          line-height: 1.6;
           overflow-x: hidden;
-          width: 100vw;
-          min-height: 100vh;
-          position: relative;
-        }
-
-        body::before {
-          content: "";
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          pointer-events: none;
-          z-index: 9999;
-          opacity: 0.05;
-          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
         .container {
           max-width: 1400px;
           margin: 0 auto;
           padding: 0 40px;
-          position: relative;
-          z-index: 1;
         }
 
         header {
-          min-height: 90vh;
+          min-height: 100vh;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           text-align: center;
-          padding: 100px 0;
-        }
-
-        .crest-wrapper {
-          margin-bottom: 2rem;
-          opacity: 0;
-          animation: fadeIn 1s var(--easing) 0.2s forwards;
-        }
-
-        .crest {
-          width: 48px;
-          height: 48px;
-          stroke: var(--text-main);
-          stroke-width: 1.5px;
-          fill: none;
         }
 
         h1 {
           font-family: var(--font-serif);
+          font-size: 7rem;
           font-weight: 500;
-          font-size: clamp(3rem, 6vw, 7rem);
-          line-height: 0.9;
+          line-height: 0.85;
           letter-spacing: -0.02em;
-          margin-bottom: 1.5rem;
+          margin-bottom: 2rem;
           color: var(--text-main);
-          opacity: 0;
-          animation: slideUp 1.2s var(--easing) 0.4s forwards;
         }
 
         .tagline {
-          font-family: var(--font-serif);
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           color: var(--text-muted);
-          margin-bottom: 1rem;
-          opacity: 0;
-          animation: fadeIn 1s var(--easing) 0.6s forwards;
+          margin-bottom: 2rem;
+          font-weight: 400;
         }
 
         .subtext {
-          font-family: var(--font-sans);
-          font-size: 0.875rem;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          color: #666;
-          margin-bottom: 3rem;
           display: flex;
           align-items: center;
-          gap: 12px;
-          opacity: 0;
-          animation: fadeIn 1s var(--easing) 0.8s forwards;
-        }
-
-        .subtext::before, .subtext::after {
-          content: "";
-          width: 20px;
-          height: 1px;
-          background: #333;
-        }
-
-        .cta-button {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          padding: 14px 32px;
-          border: 1px solid var(--text-main);
-          border-radius: 100px;
-          color: var(--text-main);
-          text-decoration: none;
+          gap: 16px;
           font-size: 0.9rem;
+          color: #666;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
           font-weight: 500;
-          transition: all 0.4s var(--easing);
-          background: transparent;
-          opacity: 0;
-          animation: fadeIn 1s var(--easing) 1s forwards;
         }
 
-        .cta-button:hover {
-          background: var(--text-main);
-          color: var(--bg-color);
-          transform: translateY(-2px);
+        .subtext span {
+          color: #333;
         }
 
         .section-header {
@@ -535,26 +485,11 @@ export default function Home() {
           color: #555;
         }
 
-        .footer-social {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-        }
-
-        .footer-social a {
-          color: #555;
-          transition: color 0.3s ease;
-          display: flex;
-          align-items: center;
-        }
-
-        .footer-social a:hover {
+        .footer-logo {
+          font-family: var(--font-serif);
+          font-style: italic;
+          font-size: 1.25rem;
           color: var(--text-main);
-        }
-
-        .footer-social svg {
-          width: 20px;
-          height: 20px;
         }
 
         /* Agent badge */
@@ -602,43 +537,33 @@ export default function Home() {
           height: 16px;
           background: #BCFF00;
           border-radius: 4px;
-          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+          line-height: 1;
+          color: #000;
+          font-weight: 700;
           flex-shrink: 0;
         }
 
-        .agent-badge .bot-icon::before {
-          content: "🤖";
-          position: absolute;
-          font-size: 10px;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          filter: grayscale(1) brightness(0);
-        }
-
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
 
         @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(40px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
           .container {
             padding: 0 20px;
+          }
+          
+          h1 {
+            font-size: 4rem;
           }
           
           .grid {
@@ -648,14 +573,6 @@ export default function Home() {
           
           .section-title {
             font-size: 2rem;
-          }
-          
-          h1 {
-            font-size: clamp(2rem, 8vw, 4rem);
-          }
-          
-          .tagline {
-            font-size: 1.2rem;
           }
 
           footer {
