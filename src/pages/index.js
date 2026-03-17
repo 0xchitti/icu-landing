@@ -68,7 +68,7 @@ export default function Home() {
       <div className="container">
         <header>
           <div className="crest-wrapper">
-            <svg height="36" viewBox="0 0 879 158" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg height="24" viewBox="0 0 879 158" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect y="2.508" width="37.619" height="77.746" fill="white"/>
               <rect x="37.619" y="80.254" width="37.619" height="77.746" fill="white"/>
               <circle cx="179.318" cy="79" r="62.071" stroke="white" strokeWidth="33.857"/>
@@ -103,9 +103,6 @@ export default function Home() {
           <div className="section-header">
             <div>
               <h2 className="section-title">Upcoming Sessions</h2>
-              <div style={{fontFamily: 'var(--font-sans)', color: '#666', fontSize: '0.9rem'}}>
-                2026 Semester
-              </div>
             </div>
           </div>
 
@@ -297,7 +294,7 @@ export default function Home() {
 
         .section-title {
           font-family: var(--font-serif);
-          font-size: 3rem;
+          font-size: 2rem;
           font-weight: 400;
         }
 
