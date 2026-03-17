@@ -32,7 +32,7 @@ export default function EventCard({ event }) {
         <div className="card-footer">
           <a 
             href={event.url}
-            className="luma-checkout--button"
+            className="register-btn luma-checkout--button"
             data-luma-action="checkout"
             data-luma-event-id={event.id}
           >

@@ -99,23 +99,50 @@ export default function Home() {
 
           <div className="grid">
             {loading ? (
-              <div style={{color: '#666', textAlign: 'center', gridColumn: '1 / -1'}}>
-                Loading events...
+              <div className="card empty-state">
+                <div className="empty-content">
+                  <div>⏳</div>
+                  <span>Loading sessions...</span>
+                </div>
               </div>
             ) : events.length > 0 ? (
               events.map(event => (
                 <EventCard key={event.id} event={event} />
               ))
             ) : (
-              <div style={{color: '#666', textAlign: 'center', gridColumn: '1 / -1'}}>
-                No events found
+              <div className="card empty-state">
+                <div className="empty-content">
+                  <div>📚</div>
+                  <span>No sessions scheduled yet</span>
+                </div>
               </div>
             )}
+
+            {/* Placeholder cards to maintain grid */}
+            <div className="card empty-state">
+              <div className="empty-content">
+                <div>🚀</div>
+                <span>More sessions coming soon</span>
+              </div>
+            </div>
+
+            <div className="card empty-state">
+              <div className="empty-content">
+                <div>⚡</div>
+                <span>Stay tuned for updates</span>
+              </div>
+            </div>
           </div>
         </section>
 
         <footer>
-          <div className="social-links">
+          <div>
+            <div className="agent-badge">
+              <div className="bot-icon"></div>
+              <span>Website maintained by AI agents</span>
+            </div>
+          </div>
+          <div className="footer-social">
             <a href="https://instagram.com/innercircle" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.33 0 8.741 0 12.001c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12.001 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12.001 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
@@ -170,16 +197,13 @@ export default function Home() {
           -moz-osx-font-smoothing: grayscale;
         }
 
-        html {
-          font-size: 16px;
-        }
-
         body {
-          font-family: var(--font-sans);
-          background: var(--bg-color);
+          background-color: var(--bg-color);
           color: var(--text-main);
-          line-height: 1.6;
+          font-family: var(--font-sans);
           overflow-x: hidden;
+          width: 100vw;
+          min-height: 100vh;
           position: relative;
         }
 
@@ -310,8 +334,8 @@ export default function Home() {
 
         .grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-          gap: 2.5rem;
+          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+          gap: 2rem;
           padding-bottom: 8rem;
         }
 
@@ -334,132 +358,200 @@ export default function Home() {
 
         .card-image-container {
           width: 100%;
-          height: 280px;
+          height: 240px;
           overflow: hidden;
           position: relative;
           background: #1a1a1a;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
         }
 
         .card-image-container img {
-          max-width: 90%;
-          max-height: 90%;
-          object-fit: contain;
-          width: auto;
-          height: auto;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.8;
           transition: opacity 0.4s ease, transform 0.6s ease;
+          filter: grayscale(100%);
         }
 
         .card:hover .card-image-container img {
           opacity: 1;
-          transform: scale(1.02);
-          filter: none;
+          transform: scale(1.05);
+          filter: grayscale(0%);
         }
 
         .card-content {
           padding: 2rem;
-          flex: 1;
           display: flex;
           flex-direction: column;
+          flex-grow: 1;
         }
 
         .card-meta {
           display: flex;
-          align-items: center;
-          gap: 1rem;
-          margin-bottom: 1rem;
-          font-size: 0.8rem;
+          justify-content: space-between;
+          font-size: 0.75rem;
           text-transform: uppercase;
           letter-spacing: 0.05em;
-          color: var(--text-muted);
-        }
-
-        .card-meta span:first-child::after {
-          content: "•";
-          margin-left: 1rem;
-          opacity: 0.5;
+          color: #666;
+          margin-bottom: 1rem;
+          border-bottom: 1px solid #222;
+          padding-bottom: 1rem;
         }
 
         .card-title {
           font-family: var(--font-serif);
-          font-size: 1.5rem;
-          font-weight: 500;
-          margin-bottom: 1rem;
-          color: var(--text-main);
+          font-size: 1.75rem;
+          margin-bottom: 0.75rem;
+          font-weight: 400;
+          line-height: 1.1;
         }
 
         .card-desc {
-          color: var(--text-muted);
-          font-size: 0.95rem;
+          font-size: 0.9rem;
+          color: #888;
           line-height: 1.5;
-          flex: 1;
           margin-bottom: 2rem;
+          flex-grow: 1;
         }
 
         .card-footer {
           margin-top: auto;
         }
 
-        .luma-checkout--button {
+        .register-btn {
           display: inline-flex;
           align-items: center;
-          padding: 10px 20px;
-          background: transparent;
-          border: 1px solid var(--border-color);
-          border-radius: 6px;
+          justify-content: center;
+          padding: 10px 24px;
+          border: 1px solid #333;
+          border-radius: 100px;
           color: var(--text-main);
           text-decoration: none;
-          font-size: 0.875rem;
-          font-weight: 500;
-          transition: all 0.3s var(--easing);
-          cursor: pointer;
+          font-size: 0.8rem;
+          transition: all 0.3s ease;
         }
 
-        .luma-checkout--button:hover {
+        .card:hover .register-btn {
           border-color: var(--text-main);
           background: var(--text-main);
           color: var(--bg-color);
-          transform: translateY(-1px);
+        }
+
+        .card.empty-state {
+          background: transparent;
+          border: 1px dashed #333;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 400px;
+        }
+        
+        .empty-content {
+          text-align: center;
+          color: #444;
+        }
+
+        .empty-content div:first-child {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+
+        .empty-content span {
+          display: block;
+          margin-top: 1rem;
+          font-family: var(--font-serif);
+          font-size: 1.25rem;
         }
 
         footer {
           border-top: 1px solid var(--border-color);
-          padding: 4rem 0 2rem;
-          text-align: center;
-        }
-
-        .social-links {
+          padding: 3rem 0;
           display: flex;
-          justify-content: center;
-          gap: 2rem;
-          margin-bottom: 2rem;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.875rem;
+          color: #555;
         }
 
-        .social-links a {
-          width: 40px;
-          height: 40px;
+        .footer-social {
           display: flex;
           align-items: center;
-          justify-content: center;
-          border: 1px solid var(--border-color);
-          border-radius: 50%;
-          color: var(--text-muted);
-          transition: all 0.3s var(--easing);
-          text-decoration: none;
+          gap: 16px;
         }
 
-        .social-links a:hover {
-          border-color: var(--text-main);
+        .footer-social a {
+          color: #555;
+          transition: color 0.3s ease;
+          display: flex;
+          align-items: center;
+        }
+
+        .footer-social a:hover {
           color: var(--text-main);
-          transform: translateY(-2px);
         }
 
-        .social-links svg {
-          width: 18px;
-          height: 18px;
+        .footer-social svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        /* Agent badge */
+        .agent-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 8px 16px;
+          border: 1px solid #222;
+          border-radius: 100px;
+          background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+          font-size: 0.8rem;
+          color: #666;
+          transition: all 0.4s ease;
+          cursor: default;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .agent-badge::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 100px;
+          padding: 1px;
+          background: linear-gradient(135deg, #BCFF00, #FF3500, #002AF0, #FF9FC2);
+          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          opacity: 0;
+          transition: opacity 0.4s ease;
+        }
+
+        .agent-badge:hover::before {
+          opacity: 1;
+        }
+
+        .agent-badge:hover {
+          color: #aaa;
+          border-color: transparent;
+        }
+
+        .agent-badge .bot-icon {
+          width: 16px;
+          height: 16px;
+          background: #BCFF00;
+          border-radius: 4px;
+          position: relative;
+          flex-shrink: 0;
+        }
+
+        .agent-badge .bot-icon::before {
+          content: "🤖";
+          position: absolute;
+          font-size: 10px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          filter: grayscale(1) brightness(0);
         }
 
         @keyframes fadeIn {
@@ -502,6 +594,12 @@ export default function Home() {
           
           .tagline {
             font-size: 1.2rem;
+          }
+
+          footer {
+            flex-direction: column;
+            gap: 2rem;
+            text-align: center;
           }
         }
       `}</style>
