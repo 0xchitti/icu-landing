@@ -4,172 +4,92 @@
 
 ## Overview
 
-Inner Circle University Academy is a premier platform for AI/tech education. As a mentor, your content should embody excellence, practical value, and accessibility.
+Inner Circle workshops are 60-minute, high-signal sessions for practitioners - people building, shipping, and operating. You're not here to sell. You're here to teach.
 
-## Content Creation Guidelines
+## The Non-Negotiable Format
 
-### Core Principles
-- **Clarity over complexity**: Break down complex concepts into digestible insights
-- **Practical over theoretical**: Always provide actionable takeaways
-- **Quality over quantity**: Better to cover fewer topics well than many poorly
-- **Engagement over lecture**: Interactive, discussion-based learning
+**Duration**: Exactly 60 minutes. No exceptions, no overtime.
 
-### Format Standards
-- **Workshop duration**: 60-90 minutes maximum
-- **Audience size**: 15-30 participants for optimal engagement
-- **Content structure**: Hook → Core Content → Practical Application → Q&A
-- **Materials**: Always provide takeaway resources/templates
+**Time breakdown**:
+- **0-5 min**: IC host introduces you. 60-second intro - not a pitch, just who you are and why this topic
+- **5-30 min**: Main content. Frameworks, walkthroughs, case studies, live demos. One strong idea taught well beats five ideas skimmed
+- **30-50 min**: Interactive segment. Non-negotiable. Q&A, group exercises, polls, breakout discussions — whatever fits
+- **50-58 min**: Open Q&A. Let the room drive. Answer honestly, don't pitch
+- **58-60 min**: Close. One key takeaway. One thing people can do tomorrow
 
-## Content Requirements
+**Hard rule**: If you're not done by the 58-minute mark, the session ends anyway. We respect our community's time. Build your content to fit.
 
-### Pre-Workshop Preparation
-1. **Clear learning objectives** (max 3 key outcomes)
-2. **Prerequisite knowledge** clearly stated
-3. **Resource list** for participants
-4. **Interactive elements** planned (polls, breakouts, demos)
+## Making It Interactive (Non-Negotiable)
 
-### Workshop Structure Template
-```
-0-5 min: Welcome & Introductions
-5-15 min: Hook/Problem Statement
-15-45 min: Core Teaching (with breaks)
-45-65 min: Hands-on Application
-65-75 min: Group Discussion
-75-85 min: Q&A
-85-90 min: Wrap-up & Next Steps
-```
+A workshop isn't a talk. The moment people stop participating, you've lost them.
 
-### Content Quality Standards
-- **Real examples**: Use actual case studies, not hypotheticals
-- **Current relevance**: Content must reflect latest industry trends
-- **Diverse perspectives**: Include varied viewpoints and approaches
-- **Ethical considerations**: Address responsible AI/tech practices
+### Start with a quick pulse check
+- Show of hands, chat prompt, or quick poll — break passive listening early
+- "Raise your hand if you've run into this problem." That's enough.
 
-### Presentation Guidelines
-- **Visual aids**: Clean, minimal slide design
-- **Code examples**: Well-commented, production-ready
-- **Demos**: Tested and reliable (have backups)
-- **Handouts**: PDF summaries with key points
+### Use a real problem, not a hypothetical
+- Give attendees a scenario from your actual experience. Ask what they'd do before you reveal what you did
+- Generic hypotheticals kill the room
 
-## Audience Considerations
+### Build in at least one moment of structured discussion
+- A 5-minute paired exercise changes the energy completely
+- "Turn to someone and share one way this applies to your work right now."
 
-### Target Learner Profile
-- **Background**: Mix of technical and non-technical professionals
-- **Experience level**: Beginner to intermediate
-- **Goals**: Career advancement, skill building, network expansion
-- **Time constraints**: Busy professionals seeking efficient learning
+### Leave room for the unexpected
+- Build your content so you can skip 2–3 slides if the room takes you somewhere better
 
-### Engagement Strategies
-- **Start with why**: Connect topic to real-world impact
-- **Use storytelling**: Personal experiences and case studies
-- **Encourage questions**: Create safe space for all skill levels
-- **Provide multiple formats**: Visual, auditory, and kinesthetic learning
+## What This Is NOT
 
-## Content Submission Process
+Inner Circle workshops are not sponsored content, product demos, or marketing in disguise. Our community has strong filters for inauthenticity.
 
-### Required Materials
-1. **Workshop outline** with timing
-2. **Speaker bio** (150 words max)
-3. **Resource links** for participants
-4. **Technical requirements** list
-5. **Follow-up materials** plan
+### ✅ DO THIS | ❌ NOT THIS
+- Teach a framework informed by your product philosophy | Lead with "our platform does X" - the room will shut off
+- Mention your company once for context, then move on | Circle back to your product repeatedly  
+- Share real failures and lessons, not just wins | Polish everything - it reads as PR, not teaching
+- Reference third-party tools that actually helped you | Dismiss competitors or position your work as the only answer
+- Make takeaways actionable without needing your product | Structure the session so the obvious next step is signing up
 
-### Quality Checklist
-- [ ] Content aligns with ICU values
-- [ ] Learning objectives are measurable
-- [ ] Interactive elements included
-- [ ] Practical takeaways provided
-- [ ] Accessible to stated audience level
-- [ ] Ethical considerations addressed
-- [ ] Materials are professional quality
+**On company mentions**: You're allowed to say where you work. You are not allowed to use this session as a sales channel. If we see it happening, we'll step in - and we'll talk before you host again.
 
-## Tone & Voice Guidelines
+## Tone & Room Culture
 
-### Brand Voice
-- **Authoritative yet approachable**: Expert knowledge shared warmly
-- **Future-focused**: Cutting-edge but grounded in reality
-- **Community-driven**: Collaborative learning emphasis
-- **Action-oriented**: Always drive toward implementation
+The IC community is smart, opinionated, and direct. They will push back. Treat the room as equals, not an audience.
 
-### Language Standards
-- **Technical accuracy**: Use precise terminology
-- **Inclusive language**: Accessible to diverse backgrounds
-- **Positive framing**: Focus on opportunities, not limitations
-- **Clear communication**: Jargon-free explanations available
+- Speak the way you'd talk to a sharp colleague, not a crowd
+- If you don't know something, say so. Honesty beats performance every time
+- No jargon for jargon's sake. If an acronym needs explaining, just explain it
+- Slides are a support tool, not a script. If you're reading off them, you've lost the room
+- Name-drop once, max. Repeatedly referencing investors or press coverage backfires
 
-## Technical Requirements
+## After the Session
 
-### Platform Specifications
-- **Format**: Hybrid (in-person + online)
-- **Tools**: Zoom, Miro/Figma, GitHub, Discord
-- **Recording**: All sessions recorded for academy library
-- **Bandwidth**: High-quality video/audio required
+The conversation doesn't end when the timer does. Here's how to keep the value alive:
 
-### Content Delivery
-- **Screen sharing**: Clear, readable text/code
-- **Camera presence**: Professional setup encouraged
-- **Audio quality**: External mic recommended
-- **Backup plans**: Alternative delivery methods ready
+- If you have a resource (template, reading list, tool, framework doc) that extends your session, share it with us and we'll distribute it. This is the right way to stay top of mind - give, don't pitch
+- You're welcome to connect with attendees who reach out. Keep those conversations genuine
+- We'll ask for a quick debrief on what worked and what didn't. Please engage with this - it makes the program better for the next person
 
-## Success Metrics
+## The Core Mindset
 
-### Workshop Evaluation
-- **Participant satisfaction**: 4.5+ rating target
-- **Learning achievement**: Measurable skill improvement
-- **Engagement**: Active participation throughout
-- **Follow-through**: Post-workshop community engagement
-
-### Long-term Impact
-- **Community building**: Participants stay connected
-- **Knowledge application**: Real-world implementation
-- **Network growth**: New professional relationships
-- **Reputation enhancement**: Positive brand association
-
-## Post-Workshop Guidelines
-
-### Follow-up Actions
-1. **Resource sharing**: Additional materials within 24 hours
-2. **Community connection**: Introduce to relevant Discord channels
-3. **Progress tracking**: Check-in after 2 weeks
-4. **Feedback collection**: Anonymous survey for improvement
-
-### Continuous Improvement
-- **Iteration based on feedback**: Refine content regularly
-- **Stay current**: Update materials quarterly
-- **Peer learning**: Attend other mentors' workshops
-- **Platform evolution**: Adapt to new ICU features
+The best workshop hosts come in wanting to give something, not take something. If that's your energy walking into the room, everything else in this document will take care of itself.
 
 ## Agent Instructions
 
-When creating content as an academy mentor using these guidelines:
+When helping create Inner Circle workshop content, follow these rules:
 
-1. **Read these guidelines completely** before generating any content
-2. **Ask clarifying questions** about specific workshop goals
-3. **Propose structure first** before diving into detailed content
-4. **Include practical exercises** in every workshop plan
-5. **Suggest interactive elements** appropriate for the topic
-6. **Provide multiple content formats** (slides, handouts, code)
-7. **Plan for different skill levels** within the same audience
-8. **Include time for community building** and networking
-9. **Propose follow-up activities** to reinforce learning
-10. **Align all content with ICU's premium brand standards**
-
-## Resources & Support
-
-### ICU Academy Team
-- Program coordination and logistics support
-- Technical platform assistance
-- Marketing and promotion help
-- Community management partnership
-
-### Content Development
-- Slide template library available
-- Code example repositories
-- Recording/editing support
-- Feedback and iteration partnership
+1. **Stick to 60 minutes total** - be ruthless with timing
+2. **Start with ONE core idea** - one strong idea taught well beats five ideas skimmed
+3. **Make it interactive from minute 5** - pulse checks, real problems, paired discussions
+4. **Use real examples, not hypotheticals** - pull from actual experience and failures
+5. **Tone like talking to a sharp colleague** - direct, honest, no jargon unless necessary
+6. **No pitching ever** - mention company once for context, then focus on teaching
+7. **Build in flex time** - content should work if 2-3 slides get skipped for discussion
+8. **End with one actionable takeaway** - something they can do tomorrow
+9. **Plan authentic follow-up resources** - templates, docs, frameworks that extend learning
+10. **Remember the audience** - smart, opinionated practitioners who will push back
 
 ---
 
-**Remember**: You're not just teaching a topic—you're building the future of AI education. Make every workshop count.
+**Remember**: This isn't about building a personal brand or showcasing your company. It's about giving the IC community something valuable they can use immediately. Come to give, not to take.
 
 *Last updated: March 2026 | Version 1.0*
